@@ -1,0 +1,32 @@
+.clip {
+  animation: clip 1s infinite linear;
+}
+
+@keyframes clip {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .msgIcon {
+    font-size: 57px;
+  }
+  .message-con {
+    font-size: 13px;
+  }
+}
+
+.own {
+  border-radius: 20px 20px 4px 20px;
+}
+.msg {
+  border-radius: 20px 20px 20px 4px;
+}
+.ownTwo {
+  border-radius: 15px 4px 15px 15px;
+  margin-top: -5px;
+}
