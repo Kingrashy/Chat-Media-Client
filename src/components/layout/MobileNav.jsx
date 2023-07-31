@@ -31,7 +31,7 @@ const MobileNav = () => {
         </Link>
         <Link
           className="flex gap-2 items-center cursor-pointer p-1"
-          to="/notifications"
+          // to="/notifications"
         >
           {path.pathname === "/notifications" ? (
             <FaBell size={27} />

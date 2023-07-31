@@ -17,8 +17,8 @@ const ChatInput = ({ chatId, currentUserId }) => {
 
   async function Send() {
     await SendMessage(data);
-    setData({ ...data, text: "" });
-    setData({ ...data, textImg: "" });
+    setData({ ...data, text: "", textImg: "" });
+    // setData({ ...data, textImg: "" });
     setPhoto("");
   }
 

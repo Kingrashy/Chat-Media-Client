@@ -66,27 +66,15 @@ const UserInfo = ({ user }) => {
     <StyledUserInfo>
       <BottomDivider className="hideFollow" />
       <FollowDeatils>
-        <ParaText text={pd} className="font-poppins" />
+        {/* <ParaText text={pd} className="font-poppins" />
         <ParaText text={fd} className="font-poppins" />
-        <ParaText text={fsd} className="font-poppins" />
+        <ParaText text={fsd} className="font-poppins" /> */}
+        <ParaText
+          text={"Please subscribe to enjoy full service"}
+          className="font-sofia text-[20px] text-neutral-500"
+        />
       </FollowDeatils>
       <BottomDivider />
-      {/* <div className="flex gap-[2rem] items-center justify-center">
-        <ParaText
-          text={post}
-          className={`font-poppins font-[600] text-[14px] cursor-pointer p-2 ${
-            upost && "border-t-2 border-t-black"
-          }`}
-          onClick={toggleSave}
-        />
-        <ParaText
-          text={save}
-          className={`font-poppins font-[600] text-[14px] cursor-pointer p-2 ${
-            usaved && "border-t-2  border-t-black"
-          }`}
-          onClick={toggleSave}
-        />
-      </div> */}
       {post ? <UserPosts /> : ""}
     </StyledUserInfo>
   );

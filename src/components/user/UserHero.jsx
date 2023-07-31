@@ -15,12 +15,12 @@ const UserHero = ({ user }) => {
         alt="Profile"
         className="rounded-full "
       />
-      <Icon
+      {/* <Icon
         icon="mingcute:vip-2-fill"
         color="gold"
         fontSize={40}
         className="absolute translate-x-[1rem] icon"
-      />
+      /> */}
       <Info user={user} />
     </StyledUserHero>
   );

@@ -5,10 +5,12 @@ import { BsThreeDots } from "react-icons/bs";
 import { RiVipDiamondFill } from "react-icons/ri";
 import { StyledProfileInfo } from "../../styles/components/user/styled";
 import { useSelector } from "react-redux";
-import { useEditModal } from "../../hook";
+import { useEditModal, useSubscribeModel } from "../../hook";
 
 const Info = ({ user }) => {
   const editmodel = useEditModal();
+  const submodal = useSubscribeModel();
+
   const auth = useSelector((state) => state.CAuth);
   return (
     <StyledProfileInfo>
@@ -17,7 +19,11 @@ const Info = ({ user }) => {
           <ParaText text={user?.name} className="font-sofia text-[25px] name" />
 
           {user.verified && <MdVerified size={19} className="text-blue-600" />}
-          <BsThreeDots size={20} className="cursor-pointer dot2" />
+          <BsThreeDots
+            size={20}
+            className="cursor-pointer dot2"
+            onClick={submodal.onOpen}
+          />
         </div>
         <div className="flex gap-1 relative">
           {auth?._id === user._id ? (
@@ -51,13 +57,13 @@ const Info = ({ user }) => {
       </div>
       <div className="flex flex-col">
         <div className="flex gap-2">
-          <div className="flex gap-1">
+          {/* <div className="flex gap-1">
             <RiVipDiamondFill size={20} className="text-blue-400" />
             <ParaText
               text="Vip user"
               className={"font-sofia text-neutral-500"}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </StyledProfileInfo>

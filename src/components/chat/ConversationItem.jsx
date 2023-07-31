@@ -8,10 +8,12 @@ import { selecteChat } from "../../redux/authSlice";
 import { OnlineDot } from "../../styles/components/chat/styled";
 import { ReadMessage } from "../../helper/post";
 import { MdVerified } from "react-icons/md";
+import { setChat, setChatPage } from "../../redux/chartSlice";
 
 const ConversationItem = ({ chat, currentUserId, isActive }) => {
   const [userData, setUserData] = useState([]);
   const [unread, setUnread] = useState([]);
+
   useEffect(() => {
     const getunread = async () => {
       const data = await getUnreadMessage(chat);
@@ -33,6 +35,8 @@ const ConversationItem = ({ chat, currentUserId, isActive }) => {
 
   async function Chat(chat) {
     dispatch(selecteChat(chat._id));
+    dispatch(setChat(chat));
+    dispatch(setChatPage(true));
     await ReadMessage(chat);
     navigate(`/direct/indox/${chat._id}`);
   }

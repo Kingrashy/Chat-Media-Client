@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { getMessages } from "../../helper/fetch";
 import { ClipLoader, ParaText } from "../../lib";
 import Messgaes from "./Messgaes";
@@ -13,9 +13,14 @@ const ChatMessage = ({ chatId, currentUserId, userdata }) => {
     };
     getMsgs();
   }, [messages]);
-  console.log("messages:", messages);
+  const messageContainerRef = useRef();
+
+  useEffect(() => {
+    messageContainerRef.current?.scrollIntoView({ behavoir: "smooth" });
+  }, [messages]);
+
   return (
-    <div className="relative w-full overflow-y-auto flex flex-col gap-3 p-[10px] h-full mt-12">
+    <div className="relative w-full overflow-y-auto flex flex-col gap-3 p-[10px] h-full mt-12 pb-[5rem]">
       {messages?.map((msg, index) => (
         <Messgaes
           key={index}
@@ -24,6 +29,7 @@ const ChatMessage = ({ chatId, currentUserId, userdata }) => {
           userdata={userdata}
           messages={messages}
           index={index}
+          messageContainerRef={messageContainerRef}
         />
       ))}
     </div>

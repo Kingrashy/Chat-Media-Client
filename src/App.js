@@ -9,6 +9,7 @@ import {
   MoreModeal,
   PostModal,
   SideBar,
+  SubscripModal,
 } from "./components";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -28,19 +29,13 @@ function App() {
     getuser();
   }, []);
 
-  // useEffect(() => {
-  //   if (auth?.userLoaded) {
-  //     navigate("/");
-  //   } else {
-  //     navigate("/auth/login");
-  //   }
-  // }, [auth?.userLoaded]);
-
-  // useEffect(() => {
-  //   if (auth?.userLoaded && !user?.isAdmin) {
-  //     navigate("/subscribe/hotles");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (auth?.userLoaded) {
+      navigate("/");
+    } else {
+      navigate("/auth/login");
+    }
+  }, [auth?.userLoaded]);
 
   return (
     <div className="relative w-full flex max-[700px]:flex-col justify-between h-full">
@@ -56,6 +51,7 @@ function App() {
         <Route path="/direct/indox/" element={<Chat />} />
         <Route path="/direct/indox/:chatId" element={<CurrentChat />} />
       </Routes>
+      <SubscripModal />
       <EditModal />
       <PostModal />
       <MoreModeal />

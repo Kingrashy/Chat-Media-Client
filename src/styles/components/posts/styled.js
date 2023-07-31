@@ -7,17 +7,17 @@ export const StyledPostFeed = styled.div`
   width: 500px;
   gap: 2rem;
   padding: 1rem;
-  filter: blur(15px);
+  filter: blur(6px);
 
   @media (max-width: 700px) {
     width: 100%;
   }
 
   svg {
-    filter: blur(15px);
+    filter: blur(8px);
   }
   p {
-    filter: blur(15px);
+    filter: blur(6px);
   }
 `;
 
@@ -25,12 +25,14 @@ export const StyledPostUserImage = styled.img`
   width: 40px;
   height: 40px;
   filter: blur(15px);
+  user-select: none;
 `;
 
 export const StyledPostImage = styled.img`
   width: 100%;
   height: 500px;
   filter: blur(15px);
+  user-select: none;
 `;
 
 export const StyledPostHeader = styled.div`

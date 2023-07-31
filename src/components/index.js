@@ -13,3 +13,4 @@ export { default as Conversation } from "./chat/Conversation";
 export { default as EmptyChatBox } from "./chat/EmptyChatBox";
 export { default as ChatBox } from "./chat/ChatBox";
 export { default as SuggestedFeed } from "./layout/SuggestedFeed";
+export { default as SubscripModal } from "./modals/SubscripModal";

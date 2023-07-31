@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { ParaText } from "../../lib";
 import { PlaceholderImage } from "../../assets";
 
-const Messgaes = ({ msg, currentUserId, userdata, messages, index }) => {
+const Messgaes = ({
+  msg,
+  currentUserId,
+  userdata,
+  messages,
+  index,
+  messageContainerRef,
+}) => {
   const sender = msg.senderId === currentUserId;
   const recievier = msg.senderId !== currentUserId;
   const isPreviousSender =
@@ -15,6 +22,7 @@ const Messgaes = ({ msg, currentUserId, userdata, messages, index }) => {
 
   return (
     <div
+      ref={messageContainerRef}
       key={msg._id}
       className={`${
         sender ? "justify-end self-end" : "flex gap-2 items-center"
@@ -24,7 +32,7 @@ const Messgaes = ({ msg, currentUserId, userdata, messages, index }) => {
         <img
           src={userdata.userProfile?.url || PlaceholderImage}
           alt="Sender Profile"
-          className="w-[30px] h-[30px] rounded-full"
+          className="w-[30px] h-[30px] rounded-full border border-black"
         />
       ) : (
         ""
