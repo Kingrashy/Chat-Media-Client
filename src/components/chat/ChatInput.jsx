@@ -64,7 +64,7 @@ const ChatInput = ({ chatId, currentUserId }) => {
       <div className="flex border border-neutral-400 p-2 rounded-[13px] w-[67%] h-[40px] justify-between items-center relative max-[700px]:w-full">
         <input
           type="text"
-          className="bg-transparent p-1 outline-none border-none w-[800px] max-[700px]:w-[200px]"
+          className="bg-transparent p-1 outline-none border-none w-[800px] max-[700px]:w-[350px]"
           placeholder="Message..."
           value={data.text}
           onKeyPress={handleKeyPress}
