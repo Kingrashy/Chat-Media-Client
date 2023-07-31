@@ -6,12 +6,23 @@ import { RiVipDiamondFill } from "react-icons/ri";
 import { StyledProfileInfo } from "../../styles/components/user/styled";
 import { useSelector } from "react-redux";
 import { useEditModal, useSubscribeModel } from "../../hook";
+import { MessageUser } from "../../helper/post";
+import { useNavigate } from "react-router-dom";
 
 const Info = ({ user }) => {
   const editmodel = useEditModal();
   const submodal = useSubscribeModel();
-
   const auth = useSelector((state) => state.CAuth);
+  const navigate = useNavigate();
+
+  const senderId = auth._id;
+  const receiverId = user._id;
+
+  async function Chat() {
+    await MessageUser(senderId, receiverId);
+    navigate("/direct/indox/");
+  }
+
   return (
     <StyledProfileInfo>
       <div className="flex items-center gap-5 max-[700px]:flex-col">
@@ -44,6 +55,7 @@ const Info = ({ user }) => {
                 soft
                 text="Message"
                 className="w-[80px] h-[29px] text-[14px]"
+                onClick={Chat}
               />
             </>
           )}
