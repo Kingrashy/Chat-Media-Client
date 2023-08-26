@@ -11,6 +11,20 @@
   }
 }
 
+.pay-load {
+  animation: loadPay 1s infinite linear;
+}
+
+@keyframes loadPay {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+    color: red;
+  }
+}
+
 @media (max-width: 700px) {
   .msgIcon {
     font-size: 30px;

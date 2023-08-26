@@ -15,35 +15,36 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import NotValid from "./pages/NotVip";
 import { getUser } from "./helper/fetch";
+import Access from "./pages/Access";
 
 function App() {
   const navigate = useNavigate();
   const auth = useSelector((state) => state.CAuth);
   const [user, setUser] = useState([]);
 
-  useEffect(() => {
-    const getuser = async () => {
-      const data = await getUser(auth);
-      setUser(data);
-    };
-    getuser();
-  }, []);
+  // useEffect(() => {
+  //   const getuser = async () => {
+  //     const data = await getUser(auth);
+  //     setUser(data);
+  //   };
+  //   getuser();
+  // }, []);
 
-  useEffect(() => {
-    if (auth?.userLoaded) {
-      navigate("/");
-    } else {
-      navigate("/auth/login");
-    }
-  }, [auth?.userLoaded]);
+  // useEffect(() => {
+  //   if (auth?.userLoaded) {
+  //     navigate("/");
+  //   } else {
+  //     navigate("/auth/login");
+  //   }
+  // }, [auth?.userLoaded]);
 
   return (
     <div className="relative w-full flex max-[700px]:flex-col justify-between h-full">
       <ToastContainer />
-      {!user?.isAdmin ? <NotValid /> : ""}
+      {/* {!user?.isAdmin ? <NotValid /> : ""} */}
       <SideBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Access />} />
         {/* <Route path="/subscribe/hotles" element={<NotValid />} /> */}
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/sign-up" element={<SignUp />} />
@@ -55,7 +56,7 @@ function App() {
       <EditModal />
       <PostModal />
       <MoreModeal />
-      <MobileNav />
+      {/* <MobileNav /> */}
     </div>
   );
 }
