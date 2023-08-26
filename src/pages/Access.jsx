@@ -48,9 +48,9 @@ const Access = () => {
               <AccessCard setOpen={setOpen} />
             </div>
           )}
-          <Link to="https://twitter.com/allenrose645" target="_blank">
+          {/* <Link to="https://twitter.com/allenrose645" target="_blank">
             <FaTwitter size={30} color="#fff" className="mt-[30px]" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
