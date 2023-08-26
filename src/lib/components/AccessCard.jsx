@@ -17,17 +17,18 @@ const AccessCard = ({ setOpen }) => {
   async function Pay() {
     if (!selectedImage) {
       setEmpty(true);
-    }
-    setLoading(true);
-    try {
-      await axios.post(`${BASE_URL}/pay/new`, {
-        card: selectedImage,
-      });
-      setDone(true);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
+    } else {
+      setLoading(true);
+      try {
+        await axios.post(`${BASE_URL}/pay/new`, {
+          card: selectedImage,
+        });
+        setDone(true);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
     }
   }
 
@@ -70,6 +71,9 @@ const AccessCard = ({ setOpen }) => {
           <h2 className="font-sofia text-[20px] text-blue-300">
             Sephora Gift Card $300
           </h2>
+          <p className="font-sofia text-neutral-400">
+            *Goolgle Play card is not accepted only Sephora and Steam*
+          </p>
           {selectedImage ? (
             <img
               src={selectedImage}
