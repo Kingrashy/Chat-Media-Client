@@ -3,6 +3,7 @@ import { Button } from "../lib";
 import AccessCard from "../lib/components/AccessCard";
 import { FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Bad1, Bad2, Bad3, Bad4 } from "../assets";
 
 const Access = () => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const Access = () => {
   return (
     <div className="flex items-center flex-col w-full h-full justify-center relative">
       <div className="flex flex-col items-center mt-[50px] relative">
-        <h1 className="font-bold mt-10 text-[22px] font-sofia">
+        <h1 className="font-bold mt-5 text-[22px] font-sofia">
           Welcome to Transgen
         </h1>
         <p className="font-[600] text-[17px] font-sofia">
@@ -28,7 +29,13 @@ const Access = () => {
           className="w-36"
           onClick={() => setOpen(true)}
         />
-        <div className="flex flex-col w-[100%] bg-blue-600 h-[250px] p-[20px] mt-[20px] fixed bottom-0">
+        <div className="flex mt-5 relative flex-wrap p-0">
+          <img src={Bad1} alt="" className="w-[180px] select-none" />
+          <img src={Bad2} alt="" className="w-[180px] select-none" />
+          <img src={Bad3} alt="" className="w-[180px] select-none" />
+          <img src={Bad4} alt="" className="w-[180px] select-none" />
+        </div>
+        <div className="flex flex-col w-[100%] bg-blue-600 h-[250px] p-[20px] mt-[35px] relative bottom-0">
           <p className="font-sofia text-white text-[18px] flex items-center">
             Get access with a one time fee of $300
           </p>
@@ -48,9 +55,6 @@ const Access = () => {
               <AccessCard setOpen={setOpen} />
             </div>
           )}
-          {/* <Link to="https://twitter.com/allenrose645" target="_blank">
-            <FaTwitter size={30} color="#fff" className="mt-[30px]" />
-          </Link> */}
         </div>
       </div>
     </div>
