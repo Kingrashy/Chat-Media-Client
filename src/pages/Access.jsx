@@ -21,7 +21,7 @@ const Access = () => {
           A premium porn site for fans, access fee costs
         </p>
         <p className="font-poppins font-[800] text-[26px] text-blue-500">
-          $300
+          $100
         </p>
         <Button
           secondary
@@ -37,7 +37,7 @@ const Access = () => {
         </div>
         <div className="flex flex-col w-[100%] bg-blue-600 h-[250px] p-[20px] mt-[35px] relative bottom-0">
           <p className="font-sofia text-white text-[18px] flex items-center">
-            Get access with a one time fee of $300
+            Get access with a one time fee of $100
           </p>
           <p className="font-sofia text-white text-[18px] flex items-center">
             Get unlimited videos and pictures live videos

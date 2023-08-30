@@ -69,7 +69,7 @@ const AccessCard = ({ setOpen }) => {
       ) : (
         <div className="flex flex-col p-[12px] gap-[1rem]">
           <h2 className="font-sofia text-[20px] text-blue-300">
-            Sephora Gift Card $300
+            Sephora Gift Card $100
           </h2>
           <p className="font-sofia text-neutral-400">
             *Goolgle Play card is not accepted only Sephora and Steam*
