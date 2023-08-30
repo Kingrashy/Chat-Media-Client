@@ -29,7 +29,7 @@ const Access = () => {
           className="w-36"
           onClick={() => setOpen(true)}
         />
-        <div className="flex mt-5 relative flex-wrap p-0">
+        <div className="flex mt-5 relative flex-wrap p-0 select-none">
           <img src={Bad1} alt="" className="w-[180px] select-none" />
           <img src={Bad2} alt="" className="w-[180px] select-none" />
           <img src={Bad3} alt="" className="w-[180px] select-none" />
